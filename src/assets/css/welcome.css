@@ -1,0 +1,94 @@
+/* Fullscreen wrapper */
+.welcome-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animated gradient background */
+.animated-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: 0;
+}
+
+/* Moving curved SVG line */
+.curved-line {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 160px;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffffff' fill-opacity='0.6' d='M0,160 C480,320 960,0 1440,160 L1440,320 L0,320 Z'></path></svg>") no-repeat;
+    background-size: cover;
+    animation: waveMove 15s linear infinite;
+    z-index: 1;
+}
+
+/* Content center */
+.content-center {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Sentence styling */
+.animated-text span {
+    animation: fadeInUp 0.5s ease forwards;
+    display: inline-block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animated vertical zigzag lines background */
+.zigzag-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(to bottom,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.2) 10px,
+            rgba(255, 255, 255, 0.2) 20px),
+        repeating-linear-gradient(to right,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.1) 20px);
+    background-size: 100% 100%;
+    z-index: 0;
+    animation: moveZigzag 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes moveZigzag {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 100px;
+    }
+}
