@@ -75,6 +75,8 @@ button:hover {
     margin-top: 1.5rem;
     list-style: none;
     padding: 0;
+    scroll-behavior: smooth;
+
 }
 
 .history li {
